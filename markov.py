@@ -70,6 +70,7 @@ def main():
     tweet = MarkovChain(text, num = 5).generate_tweet()
 #    print tweet
     twitter.update_status(status=tweet)
+
     
 
 if __name__ == '__main__':
