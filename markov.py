@@ -7,12 +7,12 @@ import sys
 
 import config
 
-#twitter = Twython(
-#    config.TWITTER_CONSUMER_KEY,
-#    config.TWITTER_CONSUMER_SECRET,
-#    config.TWITTER_ACCESS_TOKEN,
-#    config.TWITTER_ACCESS_SECRET
-#)
+twitter = Twython(
+    config.TWITTER_CONSUMER_KEY,
+    config.TWITTER_CONSUMER_SECRET,
+    config.TWITTER_ACCESS_TOKEN,
+    config.TWITTER_ACCESS_SECRET
+)
 
 class MarkovChain(object):
     def __init__(self, documents, **kwargs):
@@ -68,8 +68,8 @@ def main():
     with open(sys.argv[1]) as f:
         text = [line for line in f]
     tweet = MarkovChain(text, num = 5).generate_tweet()
-    print tweet
-#    twitter.update_status(status=tweet)
+#    print tweet
+    twitter.update_status(status=tweet)
     
 
 if __name__ == '__main__':
